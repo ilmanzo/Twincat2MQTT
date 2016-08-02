@@ -6,15 +6,14 @@
 
 using namespace std;
 
-static const AmsNetId remoteNetId { 192, 168, 0, 231, 1, 1 };
-static const char remoteIpV4[] = "192.168.0.232";
 
-//returns a port
-long plc_connect()
+//returns a port if everything goes well
+//returns 0 (zero) if error
+long plc_connect(const AmsNetId& remote_id, const char* ipV4)
 {
 
     // add local route to your EtherCAT Master
-    if (AdsAddRoute(remoteNetId, remoteIpV4))
+    if (AdsAddRoute(remote_id, ipV4))
     {
         std::cout << "Adding ADS route failed, did you specified valid addresses?\n";
         return 0;
@@ -44,23 +43,35 @@ bool plc_disconnect(long port)
 
 int main()
 {
+    const AmsNetId remoteNetId { 192, 168, 0, 231, 1, 1 };
+    const char remoteIpV4[] = "192.168.0.232";
+
+    const char* mqBrokerAddress="127.0.0.1";
 
     const AmsAddr remote { remoteNetId, AMSPORT_R0_PLC_TC3 };
 
-    const long port=plc_connect();
+    const long port=plc_connect(remoteNetId,remoteIpV4);
 
     TwincatVar<bool>  miavar("MAIN.Bool1",remote,port);
 
     miavar.getValue();
 
-    plc_disconnect(port);
 
     //publish to mqtt broker (example)
-    MqClient mq("test from c++","127.0.0.1");
+    MqClient mq("test from c++",mqBrokerAddress);
 
-    std::string message=miavar.getValue()?"TRUE":"FALSE";
-    mq.strpublish("plcvars/Bool1",message);
+    std::string message;
+    //main loop : until the user press ENTER
+    do
+    {
+        message=miavar.getValue()?"TRUE":"FALSE";
+        mq.strpublish("plcvars/Bool1",message);
+    }
+    while (cin.get()!='\n');
+
 
     mq.disconnect();
+    plc_disconnect(port);
+
 
 }

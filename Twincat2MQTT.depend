@@ -1,0 +1,168 @@
+# depslib dependency file v1.0
+1470123082 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AdsDef.cpp
+	"AdsDef.h"
+	<cstring>
+	<ostream>
+	<sstream>
+	<cstdlib>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AdsDef.h
+	<cstdint>
+	<iosfwd>
+	<string>
+	<stdint.h>
+
+1470127932 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AdsLib.cpp
+	"AdsLib.h"
+	"AmsRouter.h"
+
+1470123083 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AdsLib.h
+	"AdsDef.h"
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AmsRouter.h
+	"AmsConnection.h"
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AmsConnection.h
+	"AmsPort.h"
+	"Sockets.h"
+	"Router.h"
+	<atomic>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AmsPort.h
+	"NotificationDispatcher.h"
+	<set>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/NotificationDispatcher.h
+	"AdsNotification.h"
+	"AmsHeader.h"
+	"Semaphore.h"
+	<map>
+	<thread>
+
+1470123083 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AdsNotification.h
+	"AdsDef.h"
+	"RingBuffer.h"
+	<utility>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/RingBuffer.h
+	<cassert>
+	<cstdint>
+	<memory>
+
+1470123083 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AmsHeader.h
+	"AdsDef.h"
+	"wrap_endian.h"
+	<array>
+	<cstddef>
+	<cstring>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/wrap_endian.h
+	<cstdint>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Semaphore.h
+	<condition_variable>
+	<mutex>
+
+1470123083 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Sockets.h
+	"Frame.h"
+	"wrap_socket.h"
+	<string>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Frame.h
+	<cstddef>
+	<cstdint>
+	<memory>
+
+1470121043 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/wrap_socket.h
+	<cstdint>
+	<arpa/inet.h>
+	<netinet/in.h>
+	<netinet/tcp.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<unistd.h>
+	<winsock2.h>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Router.h
+	"AdsDef.h"
+
+1470123082 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AmsConnection.cpp
+	"AmsConnection.h"
+	"Log.h"
+
+1470123082 /home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Log.h
+	<sstream>
+
+1470123082 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AmsPort.cpp
+	"AmsPort.h"
+
+1470123082 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/AmsRouter.cpp
+	"AmsRouter.h"
+	"Log.h"
+	<algorithm>
+
+1470123083 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Frame.cpp
+	"Frame.h"
+	<algorithm>
+	<cstring>
+	<new>
+
+1470123083 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Log.cpp
+	"Log.h"
+	<algorithm>
+	<chrono>
+	<ctime>
+	<fstream>
+	<iostream>
+
+1470123082 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/NotificationDispatcher.cpp
+	"NotificationDispatcher.h"
+	"Log.h"
+
+1470123082 source:/home/andrea/projects/Twincat2MQTT/ADS/AdsLib/Sockets.cpp
+	"Sockets.h"
+	"Log.h"
+	<algorithm>
+	<climits>
+	<exception>
+	<sstream>
+	<system_error>
+
+1470127954 source:/home/andrea/projects/Twincat2MQTT/ADS/example/example.cpp
+	"AdsLib.h"
+	<iostream>
+
+1470128423 source:/home/andrea/projects/Twincat2MQTT/twincat2mqtt.cpp
+	<iostream>
+	"AdsLib.h"
+	"MqClient.h"
+	"TwincatVar.h"
+
+1470123082 source:/home/andrea/projects/Twincat2MQTT/MqClient.cpp
+	"MqClient.hpp"
+	<iostream>
+
+1470123082 /home/andrea/projects/Twincat2MQTT/MqClient.hpp
+	<mosquittopp.h>
+	<string>
+
+1470125149 source:/home/andrea/projects/Twincat2MQTT/src/TwincatVar.cpp
+	"TwincatVar.h"
+
+1470128641 /home/andrea/projects/Twincat2MQTT/include/TwincatVar.h
+	<string>
+	"AdsLib.h"
+
+1470130547 source:/home/andrea/projects/Twincat2MQTT/src/MqClient.cpp
+	"MqClient.h"
+	<iostream>
+
+1470130538 /home/andrea/projects/Twincat2MQTT/include/MqClient.h
+	<mosquittopp.h>
+	<string>
+
+1470127616 source:/home/andrea/projects/Twincat2MQTT/src/BeckHoffPLC.cpp
+	"BeckHoffPLC.h"
+
+1470127955 /home/andrea/projects/Twincat2MQTT/include/BeckHoffPLC.h
+
